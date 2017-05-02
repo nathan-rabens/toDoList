@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet"></link>
+    <title></title>
+  </head>
+  <body ng-app="Module" ng-controller="Controller">
+    <center>
+
+    <h1>Do this list of things</h1>
+
+        <input type='text' class="form" placeholder="What to do?" ng-model='item.name'>
+
+        <button type="button" ng-click='addItem(item)'>Add Task</button>
+        <input type="text" ng-model="searchStuff" placeholder="filter tasks">
+
+        <div ng-repeat="item in toDoList | filter: searchStuff">
+          <p>{{item.name}}</p>
+        </div>
+
+    </center>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
